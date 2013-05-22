@@ -11,8 +11,12 @@ class TAttendancesController extends AppController {
  *
  * @return void
  */
-  public function index() {
+	public function index() {
 		$this->TAttendance->recursive = 0;
+		$this->set('tAttendances', $this->paginate());
+	}
+		public function record() {
+		$this->TStudent->recursive = 0;
 		$this->set('tAttendances', $this->paginate());
 	}
 
